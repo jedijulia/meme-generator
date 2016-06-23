@@ -78,5 +78,8 @@ $(document).ready(function() {
             box.val(80);
         }
         target.css('font-size', value);
+        if (!$('#preview').hasClass('hidden') && box.data('target') === 'bottom') {
+            updateBottomTextPos();
+        }
     });
 });
