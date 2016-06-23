@@ -26,7 +26,8 @@ $(document).ready(function() {
             reader.onload = function (e) {
                 $('#img-preview').attr('src', e.target.result);
                 $('#preview').removeClass('hidden');
-                var h = $('#img-preview').height() * 0.9;
+                var w = $('#img-preview').width();
+                $('#width').val(w);
                 updateBottomTextPos();
                 topText.css('top', 20);
             }

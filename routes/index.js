@@ -1,5 +1,7 @@
 var express = require('express');
 var fs = require('fs');
+var os = require("os");
+
 var router = express.Router();
 
 var multer = require('multer');
@@ -8,6 +10,7 @@ var imageProcessor = require('../image-processor');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(os.hostname());
   fs.readdir('public/images', function(err, files) {
       files.splice(0, 1);
       files.reverse();
@@ -26,6 +29,7 @@ router.post('/memify', upload.single('datafile'), function(req, res, next) {
         fields.bottom_color,
         fields.bottom_size
     );
+    fname = fname.replace('public', '')
     res.render('index', { title: 'Meme Generator', images: [], imgs: [fname] });
 });
 
