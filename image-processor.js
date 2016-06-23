@@ -8,11 +8,15 @@ function createMeme(filename, top, bottom, fontsize, color) {
         .stroke(color)
         .drawText(0, 0, top, ['North'])
         .drawText(0, 0, bottom, ['South'])
-        .write('result.png', function(err) {
+        .write(generateFilename(), function(err) {
             if (!err) {
                 console.log('finished');
             }
             console.log(err);
         }
     );
+}
+
+function generateFilename() {
+    return (Math.floor(Math.random() * 100000000) + 1).toString(16) + '.png';
 }
