@@ -8,7 +8,9 @@ var imageProcessor = require('../image-processor');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // console.log(fs.readdir('public/images'));
+  fs.readdir('public/images', function(err, files) {
+      console.log(files);
+  });
   res.render('index', { title: 'Meme Generator' });
 });
 
