@@ -6,7 +6,9 @@
         <ul class="imgs">
             <% images.forEach(function(image) { %>
                 <li class="col-md-3">
+                    <a href="/detail?name=<%= image %>">
                     <img src="/images/<%= image %>" >
+                    </a>
                 </li>
             <% }); %>
         </ul>

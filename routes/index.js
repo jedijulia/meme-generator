@@ -36,4 +36,10 @@ router.post('/memify', upload.single('datafile'), function(req, res, next) {
     );
 });
 
+router.get('/detail', function(req, res, next) {
+    var fields = req.query.name;
+    var fname = '/images/' + fields;
+    res.render('index', { title: 'Meme Generator', images: [], imgs: [fname] });
+});
+
 module.exports = router;
