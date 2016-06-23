@@ -1,9 +1,10 @@
 var fs = require('fs')
 var gm = require('gm').subClass({imageMagick: true});
 
-function createMeme(filename, top, topColor, topSize, bottom, bottomColor, bottomSize) {
+function createMeme(filename, top, topColor, topSize, bottom, bottomColor, bottomSize, imageSize) {
     var fname = generateFilename();
     gm(filename)
+        .resize(imageSize)
         .fontSize(topSize)
         .fill(topColor)
         .drawText(0, 0, top, ['North'])
