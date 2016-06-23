@@ -18,5 +18,8 @@ function createMeme(filename, top, bottom, fontsize, color) {
 }
 
 function generateFilename() {
-    return (Math.floor(Math.random() * 100000000) + 1).toString(16) + '.png';
+    var filename = (Math.floor(Math.random() * 100000000) + 1).toString(16);
+    return 'public/images/' + filename + '.png';
 }
+
+exports.createMeme = createMeme;
