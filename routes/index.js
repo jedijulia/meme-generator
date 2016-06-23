@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var router = express.Router();
 
 var multer = require('multer');
@@ -7,6 +8,7 @@ var imageProcessor = require('../image-processor');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  // console.log(fs.readdir('public/images'));
   res.render('index', { title: 'Meme Generator' });
 });
 

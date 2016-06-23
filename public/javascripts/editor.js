@@ -40,7 +40,7 @@ $(document).ready(function() {
         bottomText.css('top', h);
     }
 
-    $('input[type="text"]').on('keydown', function(e) {
+    $('input[type="text"]').on('keyup', function(e) {
         if (e.keyCode === 13) {
             e.preventDefault();
         }   else {
@@ -76,8 +76,8 @@ $(document).ready(function() {
         }
         if (value > 80) {
             value = 80;
+            box.val(80);
         }
-        box.val(80);
         target.css('font-size', value);
     });
 });
