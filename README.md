@@ -6,3 +6,5 @@
 - imagemagick: `sudo apt-get install imagemagick`
 
 ##### to run the app use the command ``` DEBUG=meme-generator:* npm start ```
+
+![preview](http://i.imgur.com/Fhp6Lqe.png)
