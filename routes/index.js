@@ -10,8 +10,10 @@ var imageProcessor = require('../image-processor');
 router.get('/', function(req, res, next) {
   fs.readdir('public/images', function(err, files) {
       console.log(files);
+      files.splice(0, 1);
+      console.log(files);
+      res.render('index', { title: 'Meme Generator', images: files });
   });
-  res.render('index', { title: 'Meme Generator' });
 });
 
 router.post('/memify', upload.single('datafile'), function(req, res, next) {

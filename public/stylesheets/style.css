@@ -20,6 +20,17 @@ a {
     left: 0px;
 }
 
+ul.imgs {
+    margin-top: 20px;
+}
+
+li {
+    list-style: none;
+}
+ul.imgs img {
+    width: 100%;
+}
+
 @media (min-width: 992px) {
   .modal-dialog {
     width: 900px;
