@@ -1,10 +1,11 @@
 # meme-generator
 
-### a simple meme generator webapp
+A simple meme generator
 
-#### requirements
+#### Requirements
 - imagemagick: `sudo apt-get install imagemagick`
 
-##### to run the app use the command ``` DEBUG=meme-generator:* npm start ```
+#### Running the App 
+- `DEBUG=meme-generator:* npm start`
 
 ![preview](http://i.imgur.com/Fhp6Lqe.png)
