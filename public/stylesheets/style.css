@@ -7,7 +7,18 @@ a {
   color: #00B7FF;
 }
 
+#img-preview {
+    width: 100%;
+}
 
+#preview p {
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    color: #FFFFFF;
+    width: 100%;
+    left: 0px;
+}
 
 @media (min-width: 992px) {
   .modal-dialog {
