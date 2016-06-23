@@ -27,10 +27,13 @@ router.post('/memify', upload.single('datafile'), function(req, res, next) {
         fields.top_size,
         fields.bottom_text,
         fields.bottom_color,
-        fields.bottom_size
+        fields.bottom_size,
+        fields.width,
+        function (fname) {
+            fname = fname.replace('public', '')
+            res.render('index', { title: 'Meme Generator', images: [], imgs: [fname] });
+        }
     );
-    fname = fname.replace('public', '')
-    res.render('index', { title: 'Meme Generator', images: [], imgs: [fname] });
 });
 
 module.exports = router;
