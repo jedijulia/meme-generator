@@ -11,13 +11,13 @@ router.get('/', function(req, res, next) {
   fs.readdir('public/images', function(err, files) {
       files.splice(0, 1);
       files.reverse();
-      res.render('index', { title: 'Meme Generator', images: files });
+      res.render('index', { title: 'Meme Generator', images: files, imgs: [] });
   });
 });
 
 router.post('/memify', upload.single('datafile'), function(req, res, next) {
     var fields = req.body;
-    imageProcessor.createMeme(
+    var fname = imageProcessor.createMeme(
         'uploads/' + req.file.filename,
         fields.top_text,
         fields.top_color,
@@ -26,6 +26,7 @@ router.post('/memify', upload.single('datafile'), function(req, res, next) {
         fields.bottom_color,
         fields.bottom_size
     );
+    res.render('index', { title: 'Meme Generator', images: [], imgs: [fname] });
 });
 
 module.exports = router;
