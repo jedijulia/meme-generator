@@ -11,8 +11,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/memify', upload.single('datafile'), function(req, res, next) {
-    console.log(req.file);
-    imageProcessor.createMeme('uploads/' + req.file.filename, 'top caption', 'bottom caption', 50, '#ffffff');
+    var fields = req.body;
+    imageProcessor.createMeme(
+        'uploads/' + req.file.filename,
+        fields.top_text,
+        fields.bottom_text,
+        fields.top_size,
+        fields.top_color);
 });
 
 module.exports = router;
