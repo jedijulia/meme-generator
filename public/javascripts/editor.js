@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('#upload').modal('show');
     $('#upload').on('shown.bs.modal', function() {
         // initializeEditor();
     })
